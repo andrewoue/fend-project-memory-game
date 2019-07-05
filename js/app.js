@@ -42,6 +42,10 @@ function shuffle(array) {
  */
 
 $('.deck').on('click', function (event) {
+  const clickTarget = event.target;
+  if (clickTarget.classList.contains('card')) {
+    clickTarget.classList.toggle('show');
+  }
   console.log('You clicked me!');
 });
 
