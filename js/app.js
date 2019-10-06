@@ -61,7 +61,10 @@ $('.deck').on('click', function (event) {
 
   function checkMatch() {
     if (toggledCards[0].firstElementChild.className == toggledCards[1].firstElementChild.className) {
+      toggledCards[0].classList.toggle('match');
+      toggledCards[1].classList.toggle('match');
       console.log('Match');
+      console.log(toggledCards);
     }
     else {
       console.log('Try again!');
