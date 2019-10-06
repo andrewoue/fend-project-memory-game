@@ -4,6 +4,8 @@
  * Create a list that holds all of your cards
  */
 
+let toggledCards = [];
+
 const cards = document.querySelectorAll('.card');
 console.log(cards);
 
@@ -46,8 +48,10 @@ $('.deck').on('click', function (event) {
   if (clickTarget.classList.contains('card')) {
     clickTarget.classList.toggle('open');
     clickTarget.classList.toggle('show');
+    toggledCards.push(clickTarget)
   }
   console.log('You clicked me!');
+  console.log(toggledCards);
 });
 
 //
