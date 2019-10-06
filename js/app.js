@@ -45,7 +45,7 @@ function shuffle(array) {
 
 $('.deck').on('click', function (event) {
   const clickTarget = event.target;
-  if (clickTarget.classList.contains('card')) {
+  if (clickTarget.classList.contains('card') && toggledCards.length < 2) {
     togglePush(clickTarget)
   }
 
