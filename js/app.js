@@ -48,11 +48,24 @@ $('.deck').on('click', function (event) {
   if (clickTarget.classList.contains('card') && toggledCards.length < 2) {
     togglePush(clickTarget)
   }
+  if (toggledCards.length == 2) {
+    checkMatch();
+  }
+
 
   function togglePush(clickTarget) {
     clickTarget.classList.toggle('open');
     clickTarget.classList.toggle('show');
     toggledCards.push(clickTarget)
+  }
+
+  function checkMatch() {
+    if (toggledCards[0].firstElementChild.className == toggledCards[1].firstElementChild.className) {
+      console.log('Match');
+    }
+    else {
+      console.log('Try again!');
+    }
   }
 
   console.log('You clicked me!');
