@@ -77,9 +77,6 @@ $('.deck').on('click', function (event) {
       toggledCards.length = 0;
     }
   }
-
-  console.log('You clicked me!');
-  console.log(toggledCards)
 });
 
 //
