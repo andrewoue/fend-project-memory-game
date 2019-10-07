@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 
-// TODO\:.+ Fix syntax for checkMatch() else block
+//TODO: Fix syntax for checkMatch() else block
 
 /*
  * Create a list that holds all of your cards
@@ -20,19 +20,18 @@ console.log(cards);
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
 
-    return array;
+  return array;
 }
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -51,10 +50,10 @@ $('.deck').on('click', function (event) {
     toggleCard(clickTarget);
     pushCard(clickTarget);
   }
+
   if (toggledCards.length == 2) {
     checkMatch();
   }
-
 
   function toggleCard(clickTarget) {
     clickTarget.classList.toggle('open');
@@ -67,23 +66,23 @@ $('.deck').on('click', function (event) {
   }
 
   function checkMatch() {
-    if (toggledCards[0].firstElementChild.className == toggledCards[1].firstElementChild.className) {
+    if (toggledCards[0].firstElementChild.className ==
+      toggledCards[1].firstElementChild.className) {
       toggledCards[0].classList.toggle('match');
       toggledCards[1].classList.toggle('match');
       toggledCards.length = 0;
       console.log('Match');
       console.log(toggledCards);
-    }
-    else {
+    } else {
       console.log('Try again!');
       setTimeout(() => {
-      toggledCards[0].classList.toggle('open');
-      toggledCards[0].classList.toggle('show');
-      toggledCards[1].classList.toggle('open');
-      toggledCards[1].classList.toggle('show');
-      toggledCards.length = 0;
-      console.log(toggledCards);
-    }, 500);
+        toggledCards[0].classList.toggle('open');
+        toggledCards[0].classList.toggle('show');
+        toggledCards[1].classList.toggle('open');
+        toggledCards[1].classList.toggle('show');
+        toggledCards.length = 0;
+        console.log(toggledCards);
+      }, 500);
     }
   }
 });
