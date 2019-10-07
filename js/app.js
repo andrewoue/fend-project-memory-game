@@ -74,7 +74,12 @@ $('.deck').on('click', function (event) {
     }
     else {
       console.log('Try again!');
+      toggledCards[0].classList.toggle('open');
+      toggledCards[0].classList.toggle('show');
+      toggledCards[1].classList.toggle('open');
+      toggledCards[1].classList.toggle('show');
       toggledCards.length = 0;
+      console.log(toggledCards);
     }
   }
 });
