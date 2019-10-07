@@ -46,17 +46,22 @@ function shuffle(array) {
 $('.deck').on('click', function (event) {
   const clickTarget = event.target;
   if (clickTarget.classList.contains('card') && toggledCards.length < 2) {
-    togglePush(clickTarget)
+    toggleCard(clickTarget);
+    pushCard(clickTarget);
   }
   if (toggledCards.length == 2) {
     checkMatch();
   }
 
 
-  function togglePush(clickTarget) {
+  function toggleCard(clickTarget) {
     clickTarget.classList.toggle('open');
     clickTarget.classList.toggle('show');
-    toggledCards.push(clickTarget)
+  }
+
+  function pushCard(clickTarget) {
+    toggledCards.push(clickTarget);
+    console.log(toggledCards);
   }
 
   function checkMatch() {
@@ -69,6 +74,7 @@ $('.deck').on('click', function (event) {
     }
     else {
       console.log('Try again!');
+      toggledCards.length = 0;
     }
   }
 
