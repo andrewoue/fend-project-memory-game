@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
 
+// TODO\:.+ Fix syntax for checkMatch() else block
+
 /*
  * Create a list that holds all of your cards
  */
@@ -74,12 +76,14 @@ $('.deck').on('click', function (event) {
     }
     else {
       console.log('Try again!');
+      setTimeout(() => {
       toggledCards[0].classList.toggle('open');
       toggledCards[0].classList.toggle('show');
       toggledCards[1].classList.toggle('open');
       toggledCards[1].classList.toggle('show');
       toggledCards.length = 0;
       console.log(toggledCards);
+    }, 500);
     }
   }
 });
