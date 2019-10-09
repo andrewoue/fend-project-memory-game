@@ -1,11 +1,12 @@
 /*jshint esversion: 6 */
 
-//TODO: Reset all card to ground state for shuffle/game start 
+//TODO: Reset all card to ground state for shuffle/game start
 
 /*
  * Create a list that holds all of your cards
  */
 
+let moves = 0;
 let toggledCards = [];
 
 const cards = Array.from(document.querySelectorAll('.card'));
@@ -17,6 +18,11 @@ console.log(cards);
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+function addMoves() {
+  moves++;
+  const numberMoves = $('.moves').text(moves);
+}
 
 function shuffleCards() {
   console.log('Cards', cards);
@@ -62,6 +68,7 @@ $('.deck').on('click', function (event) {
   if (clickTarget.classList.contains('card') && toggledCards.length < 2) {
     toggleCard(clickTarget);
     pushCard(clickTarget);
+    addMoves(); //Added to keep track of moves
   }
 
   if (toggledCards.length == 2) {
