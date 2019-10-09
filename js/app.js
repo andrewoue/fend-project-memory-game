@@ -1,6 +1,6 @@
 /*jshint esversion: 6 */
 
-//TODO: Fix syntax for checkMatch() else block
+//TODO: Reset all card to ground state for shuffle/game start 
 
 /*
  * Create a list that holds all of your cards
@@ -8,7 +8,7 @@
 
 let toggledCards = [];
 
-const cards = document.querySelectorAll('.card');
+const cards = Array.from(document.querySelectorAll('.card'));
 console.log(cards);
 
 /*
@@ -17,6 +17,17 @@ console.log(cards);
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+function shuffleCards() {
+  console.log('Cards', cards);
+  const shuffledCards = shuffle(cards);
+  console.log('Shuffled Cards', shuffledCards);
+  for (card of shuffledCards) {
+    $('.deck').append(card);
+  }
+}
+
+shuffleCards();
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -32,6 +43,8 @@ function shuffle(array) {
 
   return array;
 }
+
+console.log('What?');
 
 /*
  * set up the event listener for a card. If a card is clicked:
