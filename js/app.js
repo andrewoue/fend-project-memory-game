@@ -19,6 +19,16 @@ console.log(cards);
  *   - add each card's HTML to the page
  */
 
+function scoreMoves() {
+  if (moves == 17) {
+    $('ul li:eq(0)').css('visibility', 'hidden');
+  } else if (moves == 25) {
+    $('ul li:eq(1)').css('visibility', 'hidden');
+  } else if (moves >= 32) {
+    $('ul li:eq(2)').css('visibility', 'hidden');
+  }
+}
+
 function addMoves() {
   moves++;
   const numberMoves = $('.moves').text(moves);
@@ -69,6 +79,7 @@ $('.deck').on('click', function (event) {
     toggleCard(clickTarget);
     pushCard(clickTarget);
     addMoves(); //Added to keep track of moves
+    scoreMoves(); //Added to score number of moves
   }
 
   if (toggledCards.length == 2) {
