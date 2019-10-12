@@ -19,6 +19,16 @@ console.log(cards);
  *   - add each card's HTML to the page
  */
 
+function runClock() {
+  time = 0;
+  let clockTime = setInterval(() => {
+    time++;
+    console.log(time);
+  }, 1000);
+}
+
+//runClock();
+
 function scoreMoves() {
   if (moves == 17) {
     $('ul li:eq(0)').css('visibility', 'hidden');
