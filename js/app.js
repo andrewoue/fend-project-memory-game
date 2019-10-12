@@ -6,6 +6,8 @@
  * Create a list that holds all of your cards
  */
 
+
+let clockOff = true;
 let moves = 0;
 let toggledCards = [];
 
@@ -90,6 +92,11 @@ $('.deck').on('click', function (event) {
     pushCard(clickTarget);
     addMoves(); //Added to keep track of moves
     scoreMoves(); //Added to score number of moves
+  }
+
+  if (clockOff) {
+    runClock();
+    clockOff = false;
   }
 
   if (toggledCards.length == 2) {
