@@ -8,6 +8,7 @@
 
 
 let clockOff = true;
+let time = 0;
 let moves = 0;
 let toggledCards = [];
 
@@ -25,11 +26,15 @@ function runClock() {
   time = 0;
   let clockTime = setInterval(() => {
     time++;
+    displayClock();
     console.log(time);
   }, 1000);
 }
 
-//runClock();
+function displayClock() {
+  $('.clock').html(time);
+  console.log(time);
+}
 
 function scoreMoves() {
   if (moves == 17) {
