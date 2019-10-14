@@ -9,6 +9,7 @@
 
 let clockOff = true;
 let time = 0;
+let clockTime;
 let moves = 0;
 let toggledCards = [];
 
@@ -24,12 +25,17 @@ console.log(cards);
 
 function runClock() {
   time = 0;
-  let clockTime = setInterval(() => {
+  clockTime = setInterval(() => {
     time++;
 //    displayClock();
     formatTime();
     console.log(time);
   }, 1000);
+  //clearInterval(clockTime);
+}
+
+function stopClock() {
+  clearInterval(clockTime);
 }
 
 //function displayClock() {
@@ -49,7 +55,7 @@ function formatTime() {
 
   $('.clock').html(formattedTime);
 
-  console.log(formattedTime);
+  //console.log(formattedTime);
 }
 
 function scoreMoves() {
