@@ -26,14 +26,30 @@ function runClock() {
   time = 0;
   let clockTime = setInterval(() => {
     time++;
-    displayClock();
+//    displayClock();
+    formatTime();
     console.log(time);
   }, 1000);
 }
 
-function displayClock() {
-  $('.clock').html(time);
-  console.log(time);
+//function displayClock() {
+//  $('.clock').html(time);
+//  console.log(time);
+//}
+
+function formatTime() {
+  let minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+  let formattedTime = `${minutes}:${seconds}`;
+  if (seconds < 10) {
+    formattedTime = `${minutes}:0${seconds}`;
+  } else {
+    formattedTime = `${minutes}:${seconds}`;
+  }
+
+  $('.clock').html(formattedTime);
+
+  console.log(formattedTime);
 }
 
 function scoreMoves() {
