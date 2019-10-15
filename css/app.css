@@ -119,15 +119,14 @@ h1 {
     position: fixed;
     top: 25%;
     left: 40%;
-    height: 400px;
     width: 400px;
     background: #fff;
 }
 
 .modal-head {
     display: flex;
-    justify-content: space-between;
-    align-items: top;
+    justify-content: space-around;
+    align-items: center;
     padding: 0.5rem;
     border-bottom: 2px solid black;
 }
@@ -141,4 +140,10 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
 }
