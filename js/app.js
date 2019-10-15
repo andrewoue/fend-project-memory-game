@@ -23,6 +23,11 @@ console.log(cards);
  *   - add each card's HTML to the page
  */
 
+function toggleModal() {
+  const modal = document.querySelector('.modal-bg');
+  modal.classList.toggle('hide');
+}
+
 function runClock() {
   time = 0;
   clockTime = setInterval(() => {

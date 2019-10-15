@@ -147,3 +147,7 @@ h1 {
   justify-content: space-around;
   padding: 0.5rem;
 }
+
+.hide {
+  display: none;
+}
