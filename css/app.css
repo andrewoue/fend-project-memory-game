@@ -116,8 +116,9 @@ h1 {
 }
 
 .modal-bod {
-    position: absolute;
+    position: fixed;
     top: 25%;
+    left: 40%;
     height: 400px;
     width: 400px;
     background: #fff;
