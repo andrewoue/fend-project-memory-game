@@ -108,6 +108,18 @@ h1 {
     cursor: pointer;
 }
 
+.modal-stats .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.modal-stats .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
 .modal-bg {
     position: absolute;
     height: 100%;

@@ -23,10 +23,20 @@ console.log(cards);
  *   - add each card's HTML to the page
  */
 
+function modalStats() {
+  const moveStat = document.querySelector('.modal-moves');
+  const timeStat = document.querySelector('.modal-time');
+  const clockTime = document.querySelector('.clock').innerHTML;
+
+  moveStat.innerHTML = `Moves ${moves}`;
+  timeStat.innerHTML = `Time ${clockTime}`;
+}
+
 function toggleModal() {
   const modal = document.querySelector('.modal-bg');
   modal.classList.toggle('hide');
 }
+
 
 function runClock() {
   time = 0;
@@ -66,10 +76,13 @@ function formatTime() {
 function scoreMoves() {
   if (moves == 17) {
     $('ul li:eq(0)').css('visibility', 'hidden');
+    $('ul li:nth-child(1) i').css('visibility', 'hidden');
   } else if (moves == 25) {
     $('ul li:eq(1)').css('visibility', 'hidden');
+    $('ul li:nth-child(2) i').css('visibility', 'hidden');
   } else if (moves >= 32) {
     $('ul li:eq(2)').css('visibility', 'hidden');
+    $('ul li:nth-child(3) i').css('visibility', 'hidden');
   }
 }
 
